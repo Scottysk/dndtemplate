@@ -8,7 +8,7 @@ class PostsController < ApplicationController
     if logged_in?
       redirect '/login'
     else
-      "New post here"
+      erb :new
     end
   end
 
@@ -16,10 +16,7 @@ class PostsController < ApplicationController
     if !logged_in?
       redirect '/login'
     else
-      if post = current_user.posts.find_by(params[:id])
-      "Edit post here"
-    else 
-      redirect '/posts'
+      post = current_user.posts.find(params[:id])
     end
   end
 end
