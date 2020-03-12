@@ -1,9 +1,10 @@
 class UsersController < ApplicationController
   get '/signup' do
-    erb :'views/users'
+    erb :users
   end
   
   get '/login' do
+    
     erb :login
   end
 
@@ -15,11 +16,14 @@ class UsersController < ApplicationController
   post '/login' do
     	user = User.find_by(:username => params[:username])
 		if user && user.authenticate(params[:password])
-			session[:user_id] = user.id
+		session[:user_id] = user.id
+		  erb :characters
 			else
 			  redirect "/login"
 			end
 		end
+		
+		
  #   login(params[:username], params[:password])
 #    redirect '/characters/'
  # end
