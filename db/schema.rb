@@ -17,7 +17,7 @@ ActiveRecord::Schema.define(version: 20200312043013) do
     t.string  "name"
     t.string  "gender"
     t.string  "race"
-    t.string  "class"
+    t.string  "archetype"
     t.integer "user_id"
   end
 

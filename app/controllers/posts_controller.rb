@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   end
   
   post '/characters' do
-  @character = Character.create(:title => params[:title], :content => params[:content])
+  @character = Character.create(name: params[:name], gender: params[:gender], race: params[:race], archetype: params[:archetype], user_id: params[:user_id])
   redirect to "/characters/#{@character.id}"
 end
 
