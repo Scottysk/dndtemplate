@@ -14,7 +14,7 @@ class UsersController < ApplicationController
 
   post '/sessions' do
     login(params[:username], params[:password])
-    redirect '/posts'
+    redirect '/posts/'
   end
 
   post '/users' do

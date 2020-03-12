@@ -11,6 +11,11 @@ class PostsController < ApplicationController
       erb :new
     end
   end
+  
+  post '/posts' do
+  @post = Post.create(:title => params[:title], :content => params[:content])
+  redirect to "/posts/#{@post.id}"
+end
 
   get '/posts/:id/edit' do
     if !logged_in?
