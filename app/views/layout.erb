@@ -11,17 +11,17 @@
     <% if logged_in? %>
     <div class="topnav">
     <a class="active" href="/">Home</a>
-    <small> You are logged in as <%= User.find(session[:user_id]).username %></small>
+    <a href="/characters/new">New Character</a>
+    <a href="/characters">Characters</a>
     <a href="/logout">Logout</a>
-    <a href="/posts">Templates</a>
+    <small> You are logged in as <%= User.find(session[:user_id]).username %></small>
     
     <% else %>
     <div class="topnav">
     <a class="active" href="/">Home</a>
     <a href="/login">Login</a>
     <a href="/signup">Signup</a>
-    <a href="/characters">Templates</a>
-    <a href="/characters/new">New Character</a>
+    <a href="/characters">Characters</a>
     </div>
     <% end %>
     
