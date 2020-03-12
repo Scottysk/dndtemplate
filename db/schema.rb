@@ -14,8 +14,10 @@
 ActiveRecord::Schema.define(version: 20200312043013) do
 
   create_table "characters", force: :cascade do |t|
-    t.string  "title"
-    t.string  "content"
+    t.string  "name"
+    t.string  "gender"
+    t.string  "race"
+    t.string  "class"
     t.integer "user_id"
   end
 

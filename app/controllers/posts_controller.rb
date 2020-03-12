@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
 
   get '/characters' do
-    "Current list of characters."
+    @characters = Characters.all
+    :characterspage
   end
 
   get '/characters/new' do
@@ -10,6 +11,10 @@ class PostsController < ApplicationController
     else
       erb :new
     end
+  end
+  
+  get '/characters/id' do
+    
   end
   
   post '/characters' do
@@ -21,7 +26,7 @@ end
     if !logged_in?
       redirect '/login'
     else
-      post = current_user.posts.find(params[:id])
+      character = current_user.characters.find(params[:id])
       "An edit post form #{current_user.id} is editing #{character.id}"
   end
 end
