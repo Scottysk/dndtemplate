@@ -2,26 +2,45 @@
 <h1>Dugneons and Dragons Creation Page</h1>
 <form action="/characters/new" method="GET">
   
-  <label for="name">Name:</label><br>
-  <input type="text" id="name" name="name"><br>
+  <label for="name">Name of character:</label><br>
+  <input type="text" id="name" name="name" size="30"><br>
+<p></p>
 
-
+<h2>Choose a gender: </h2>
+  <input type="radio" id="male" name="gender" value="male">
   <label for="male">Male</label><br>
-  <input type="radio" id="male" name="gender" value="male"><br>
   
+  <input type="radio" id="female" name="gender" value="female">
   <label for="female">Female</label><br>
-  <input type="radio" id="female" name="gender" value="female"><br>
 
+  <input type="radio" id="other" name="gender" value="other">
   <label for="other">Other</label><br>
-  <input type="radio" id="other" name="gender" value="other"><br>
 
+<p></p>
 
-
-  <input type="radio" id="dragonborn" name="race" value="Dragonborn"><br>
+<h3>Choose a race:</h3>
+  <input type="radio" id="dragonborn" name="race" value="Dragonborn">
   <label for="dragonborn">Dragonborn</label><br>
   
-  <input type="radio" id="dwarf" name="race" value="Dwarf"><br>
-  <label for="dwarf">Female</label><br>
+  <input type="radio" id="dwarf" name="race" value="Dwarf">
+  <label for="dwarf">Dwarf</label><br>
+  
+  <input type="radio" id="elf" name="race" value="Elf">
+  <label for="elf">Elf</label><br>
+  
+  <input type="radio" id="gnome" name="race" value="Gnome">
+  <label for="gnome">Gnome</label><br>
+  
+  <input type="radio" id="halfelf" name="race" value="HalfElf">
+  <label for="halfelf">Half Elf</label><br>
+  
+  <input type="radio" id="human" name="race" value="Human">
+  <label for="human">Human</label><br>
+  
+  <input type="radio" id="tiefline" name="race" value="Tiefling">
+  <label for="tiefling">Tiefling</label><br>
+  
+<p></p>
   
 
 </form>
