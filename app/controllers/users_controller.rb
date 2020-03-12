@@ -12,10 +12,17 @@ class UsersController < ApplicationController
     redirect '/'
   end
 
-  post '/sessions' do
-    login(params[:username], params[:password])
-    redirect '/characters/'
-  end
+  post '/login' do
+    	user = User.find_by(:username => params[:username])
+		if user && user.authenticate(params[:password])
+			session[:user_id] = user.id
+			else
+			  redirect "/login"
+			end
+		end
+ #   login(params[:username], params[:password])
+#    redirect '/characters/'
+ # end
 
   post '/users' do
     @user = User.new
