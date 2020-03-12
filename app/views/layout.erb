@@ -8,20 +8,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
 
     <h1>Dndtemplates</h1>
-    <%= if logged_in? %>
+    <% if logged_in? %>
     <div class="topnav">
     <a class="active" href="/">Home</a>
     <small> You are logged in as <%= User.find(session[:user_id]).username %></small>
     <a href="/logout">Logout</a>
     <a href="/posts">Templates</a>
     
-    <%= else %>
+    <% else %>
     <div class="topnav">
     <a class="active" href="/">Home</a>
     <a href="/login">Login</a>
     <a href="/signup">Signup</a>
     <a href="/posts">Templates</a>
     </div>
+    <% end %>
     
     
     
