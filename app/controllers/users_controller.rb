@@ -9,12 +9,12 @@ class UsersController < ApplicationController
 
   get '/logout' do
     logout!
-    redirect '/posts'
+    redirect '/'
   end
 
   post '/sessions' do
     login(params[:username], params[:password])
-    redirect '/posts/'
+    redirect '/characters/'
   end
 
   post '/users' do
