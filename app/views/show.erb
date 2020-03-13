@@ -2,7 +2,10 @@
 <br>
 
 <h2>Race: </h2>
-<p> <% arr = @character.race.split(" , ") %> </p>
-<p> <% arr.each do |ra| %> </p>
-<p> <%= ra %> </p>
-<p> <% end %> </p>
+<p> <%= @character.race %> </p>
+
+<h2>Gender:</h2>
+<p> <%= @character.gender %></p>
+
+<h2>Class: </h2>
+<p> <%= @character.archetype %></p>
