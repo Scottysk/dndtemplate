@@ -18,8 +18,13 @@ end
     end
   end
   
-  get '/characters/id' do
-    
+  get '/characters/:id' do
+    if !logged_in?
+      redirect '/login'
+    else
+      @character = Character.find(params[:id])
+      erb :show
+    end
   end
   
   post '/characters' do

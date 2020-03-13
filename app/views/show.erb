@@ -1,0 +1,8 @@
+<h1> <%= @character.name %> </h1>
+<br>
+
+<h2>Race: </h2>
+<p> <% arr = @character.race.split(" , ") %> </p>
+<p> <% arr.each do |ra| %> </p>
+<p> <%= ra %> </p>
+<p> <% end %> </p>
