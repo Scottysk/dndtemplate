@@ -28,7 +28,7 @@ end
   end
   
   post '/characters' do
-  @character = Character.create(name: params[:name], gender: params[:gender], race: params[:race], archetype: params[:archetype], user_id: params[:user_id])
+  @character = Character.create(name: params[:name], gender: params[:gender], race: params[:race], archetype: params[:archetype], :user_id => @user_id)
   redirect to "/characters"
 end
 
