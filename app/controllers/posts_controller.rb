@@ -5,7 +5,7 @@ class PostsController < ApplicationController
     redirect "/login"
     else
     @user = current_user
-    @characters = Character.all
+    @characters = @user.characters.all
     erb :characterspage
   end
 end

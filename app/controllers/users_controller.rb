@@ -23,15 +23,9 @@ class UsersController < ApplicationController
 			end
 		end
 		
-		
- #   login(params[:username], params[:password])
-#    redirect '/characters/'
- # end
 
   post '/users' do
-    @user = User.new
-    @user.username = params[:username]
-    @user.password = params[:password]
+    @user = User.create(username: params[:username], password: params[:password])
     if @user.save
       redirect '/login'
     else
