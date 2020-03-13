@@ -5,7 +5,7 @@ class PostsController < ApplicationController
     redirect "/login"
     else
     @user = current_user
-    @characters = @user.characters.all
+    @characters = @user.characters
     erb :characterspage
   end
 end
@@ -28,7 +28,7 @@ end
   end
   
   post '/characters' do
-  @character = Character.create(name: params[:name], gender: params[:gender], race: params[:race], archetype: params[:archetype], :user_id => @user_id)
+  @character = Character.create(name: params[:name], gender: params[:gender], race: params[:race], archetype: params[:archetype], user_id: params[:user_id])
   redirect to "/characters"
 end
 
