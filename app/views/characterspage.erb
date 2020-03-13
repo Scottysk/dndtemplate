@@ -1,0 +1,8 @@
+<p><%= @user.username %>'s Characters</p>
+<h2>Select a character you would like to edit or delete</h2>
+<% @characters.each do |character| %>
+<ul>
+  <li>
+    <a href="/characters" <%= characters.id%>"<%= characters.name %></li></a>
+</ul>
+<% end %>
