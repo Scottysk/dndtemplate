@@ -42,6 +42,7 @@ end
         redirect '/characters'
         erb :edit
       end
+    end
   end
   
   patch '/characters/:id' do 
@@ -52,7 +53,6 @@ end
       character.save
         redirect '/characters/{character.id}'
       end
-  end
 end
 
 
