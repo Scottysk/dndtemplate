@@ -51,6 +51,19 @@ end
       @character.save
         redirect '/characters'
   end
+  
+  delete '/characters/:id' do
+    if !logged_in?
+      redirect '/login'
+    else
+      @character = Character.find(params[:id])
+      if current_user.id != @character.user_id
+        redirect '/characters'
+      else
+        @character.delete
+        redirect '/characters'
+  end
+  
 
 
 end
