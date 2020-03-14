@@ -52,7 +52,7 @@ end
         redirect '/characters'
   end
   
-  delete '/characters/:id' do
+  delete '/characters/:id/delete' do
     if !logged_in?
       redirect '/login'
     else
@@ -62,7 +62,9 @@ end
       else
         @character.delete
         redirect '/characters'
+    end
   end
+end
   
 
 
