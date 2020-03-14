@@ -37,23 +37,20 @@ end
     if !logged_in?
       redirect '/login'
     else
-      @character = Character.find(params[:id])
-      if current_user.id != @character.user_id
-        redirect '/characters'
+      @character = Character.find_by_id(params[:id])
         erb :edit
       end
     end
-  end
   
   patch '/characters/:id' do 
-  character = Character.find(params[:id])
+    @character = Character.find(params[:id])
       if params[:name].empty?
         redirect '/characters/#{params[:id]}/edit'
-      character.update(name: params[:name], gender: params[:gender], race: params[:race], archetype: params[:archetype])
-      character.save
-        redirect '/characters/{character.id}'
       end
-end
+      @character.update(name: params[:name], gender: params[:gender], race: params[:race], archetype: params[:archetype])
+      @character.save
+        redirect '/characters'
+  end
 
 
 end
