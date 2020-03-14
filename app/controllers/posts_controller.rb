@@ -37,8 +37,21 @@ end
     if !logged_in?
       redirect '/login'
     else
-      character = current_user.character.find(params[:id])
-      "An edit post form #{current_user.id} is editing #{character.id}"
+      @character = Character.find(params[:id])
+      if current_user.id != @character.user_id
+        redirect '/characters'
+        erb :edit
+      end
+  end
+  
+  patch '/characters/:id'
+  @character = Character.find(params[:id])
+      if params[:name].empty?
+        redirect '/characters/#{params[:id]}/edit'
+      character.update(name: params[:name], gender: params[:gender], race: params[:race], archetype: params[:archetype])
+      character.save
+        redirect '/characters/{character.id}'
+      end
   end
 end
 
