@@ -44,8 +44,8 @@ end
       end
   end
   
-  patch '/characters/:id'
-  @character = Character.find(params[:id])
+  patch '/characters/:id' do 
+  character = Character.find(params[:id])
       if params[:name].empty?
         redirect '/characters/#{params[:id]}/edit'
       character.update(name: params[:name], gender: params[:gender], race: params[:race], archetype: params[:archetype])
