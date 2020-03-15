@@ -3,11 +3,16 @@
 <head>
 </head>
 <body>
+  
+<p>Want to create your own character? Login or Signup to get started!</p>
 
-<h1>DNDTemplates</h1>
-
-<p>Want to start your collection? Login or Signup to get started!</p>
+<h1>Current list of characters:</h1>
 
 
+<% @characters.each do |character| %>
+
+  <a href="/characters/<%= character.id%>"><%= character.name%></a>
+  <br />
+  <% end %>
 </body>
 </html>

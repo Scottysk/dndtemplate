@@ -10,7 +10,7 @@
 <h2>Class: </h2>
 <p> <%= @character.archetype %></p>
 
-
+<% if @character.user == current_user %>
 <form action="/characters/<%= @character.id %>/edit" method="get">
   <input type="submit" class="button" value="Edit">
   </form>
@@ -19,3 +19,5 @@
   <input id="hidden" type="hidden" name="_method" value="delete">
   <input type="submit" class="button" value="Delete">
   </form>
+
+<% end %>

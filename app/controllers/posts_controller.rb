@@ -1,4 +1,10 @@
 class PostsController < ApplicationController
+  
+  get '/' do
+    @characters = Character.all
+    @character = Character.find_by_id(params[:id])
+      erb :welcome
+  end
 
   get '/characters' do
     if !logged_in?

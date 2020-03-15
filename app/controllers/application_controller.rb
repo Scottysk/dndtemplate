@@ -9,11 +9,6 @@ class ApplicationController < Sinatra::Base
     set :session_secret, "autho_demo"
   end
 
-  get "/" do
-    erb :welcome
-  end
-
-
 
 
   helpers do
