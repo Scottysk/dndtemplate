@@ -13,14 +13,11 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
-    color: #333;
-    font-family: Sans-Serif;
-    line-height: 18px;
+    background-image: url(https://download.hipwallpaper.com/desktop/1920/1080/3/47/0YomuS.jpg);
   }
 
   .wrapper {
-    background: #fff;
+    background: #c7b793;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -31,6 +28,7 @@
   }
 
   h1 {
+    color: #7a7161;
     font-size: 36px;
     line-height: 54px;
   }
@@ -61,7 +59,7 @@
   }
 
   .sidebar {
-    background: #eee;
+    background: #c7b793;
     border: 1px solid #ccc;
     float: right;
     padding: 2.08333333333%; /* 5px / 240px */
