@@ -15,9 +15,10 @@ class UsersController < ApplicationController
 
   post '/login' do
     	@user = User.find_by(:username => params[:username])
+    	@characters = @user.characters
 		if @user && @user.authenticate(params[:password])
 		session[:user_id] = @user.id
-		  erb :characters
+		  erb :characterspage
 			else
 			  redirect "/login"
 			end
