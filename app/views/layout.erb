@@ -12,9 +12,11 @@
     <div class="topnav">
     <a class="active" href="/">Home</a>
     <a href="/characters/new">New Character</a>
-    <a href="/characters">Characters</a>
+    <a href="/characters">My Characters</a>
+    <div class="topnav-right">
     <a href="/logout">Logout</a>
     <a href="/">You are logged in as <%= User.find(session[:user_id]).username %></a>
+    </div>
     </div>
     
     <% else %>
