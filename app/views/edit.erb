@@ -4,7 +4,7 @@
 <input id="hidden" type="hidden" name="_method" value="patch">
 
   <label for="name">Character Name:</label><br>
-  <input type="text" id="name" name="name" size="30"><br>
+  <input type="text" id="name" name="name" size="30" value="<%= @character.name%>"><br>
   
   <p></p>
   
@@ -22,7 +22,7 @@
   <label for="gnome">Gnome</label><br>
   
   <input type="radio" id="race" name="race" value="HalfElf">
-  <label for="halfelf">Half Elf</label><br>
+  <label for="Half Elf">Half Elf</label><br>
   
   <input type="radio" id="race" name="race" value="Human">
   <label for="human">Human</label><br>
@@ -71,12 +71,11 @@
   <input type="radio" id="archetype" name="archetype" value="rogue">
   <label for="rogue">Rogue</label><br>
   
-  <h3>Backstory: </h3>
-  <textarea id="background" name="background" rows="5" cols="30">
-  </textarea>
-  
+  <label>Background: </label><br>
+  <textarea type="text" name="background"  rows="10" cols="60" id="background"><%= @character.background %></textarea></br>
   
   <p></p>
+  
   <input type="submit" value="Finish Editing">
 
 </form>
