@@ -1,7 +1,14 @@
 <h1><%= @user.username %>'s Characters</h1>
+<% if @characters.empty? %>
+
+<p> You have no Dungeons and Dragons characters. Click <a href="/characters/new">here</a> to make one!</p>
+
+<% else %> 
+
 <h3> Current list of active characters:</h3>
 <% @characters.each do |character| %>
 
   <a href="/characters/<%= character.id%>"><%= character.name%></a>
   <br />
+  <% end %>
   <% end %>
