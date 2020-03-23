@@ -35,9 +35,9 @@ end
   
   post '/characters' do
   @user = current_user
-  @character = Character.create(name: params[:name], gender: params[:gender], race: params[:race], archetype: params[:archetype], user_id: @user.id)
+  @character = Character.create(name: params[:name], gender: params[:gender], race: params[:race], archetype: params[:archetype], background: params[:background], user_id: @user.id) unless params[:name].empty?
   redirect to "/characters"
-end
+  end
 
   get '/characters/:id/edit' do
     if !logged_in?
@@ -53,7 +53,7 @@ end
       if params[:name].empty?
         redirect '/characters/#{params[:id]}/edit'
       end
-      @character.update(name: params[:name], gender: params[:gender], race: params[:race], archetype: params[:archetype])
+      @character.update(name: params[:name], gender: params[:gender], race: params[:race], archetype: params[:archetype], background: params[:background])
       @character.save
         redirect '/characters'
   end

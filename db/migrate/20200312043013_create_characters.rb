@@ -5,6 +5,7 @@ class CreateCharacters < ActiveRecord::Migration
       t.string :gender
       t.string :race
       t.string :archetype
+      t.string :background
       t.integer :user_id
     end
   end

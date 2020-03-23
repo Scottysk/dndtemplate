@@ -1,14 +1,17 @@
 <h1> <%= @character.name %> </h1>
 <br>
 
-<h2>Race: </h2>
+<h3>Race: </h3>
 <p> <%= @character.race %> </p>
 
-<h2>Gender:</h2>
+<h3>Gender:</h3>
 <p> <%= @character.gender %></p>
 
-<h2>Class: </h2>
+<h3>Class: </h3>
 <p> <%= @character.archetype %></p>
+
+<h3>Background: </h3>
+<p> <%= @character.background %></p>
 
 <% if @character.user == current_user %>
 <form action="/characters/<%= @character.id %>/edit" method="get">
