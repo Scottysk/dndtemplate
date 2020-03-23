@@ -4,15 +4,21 @@
 </head>
 <body>
   
-<p>Want to create your own character? Login or Signup to get started!</p>
 
-<h1>Current list of characters:</h1>
+<h2>Current list of characters:</h2>
 
 
 <% @characters.each do |character| %>
 
-  <a href="/characters/<%= character.id%>"><%= character.name%></a>
-  <br />
+  <h2><a href="/characters/<%= character.id%>"><%= character.name%></a></h2>
   <% end %>
+  
+  <p></p>
+<p>Want to create your own character? Login or Signup to get started!</p>
+  
+  
+  
+  
+  
 </body>
 </html>
