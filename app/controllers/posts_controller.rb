@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  
+  require 'pry'
   get '/' do
     @characters = Character.all
     @character = Character.find_by_id(params[:id])
@@ -44,18 +44,27 @@ end
       redirect '/login'
     else
       @character = Character.find_by_id(params[:id])
+      if current_user.id == @character.user_id
         erb :edit
+      else 
+        redirect '/'
       end
     end
+  end
   
   patch '/characters/:id' do 
     @character = Character.find(params[:id])
       if params[:name].empty?
         redirect '/characters/#{params[:id]}/edit'
-      end
+        
+      elsif current_user.id == @character.user_id
       @character.update(name: params[:name], gender: params[:gender], race: params[:race], archetype: params[:archetype], background: params[:background])
       @character.save
         redirect '/characters'
+        
+      else 
+        redirect '/'
+    end
   end
   
   delete '/characters/:id/delete' do
