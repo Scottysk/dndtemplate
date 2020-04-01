@@ -1,4 +1,4 @@
-<h1><%= @user.username %>'s list of active characters:</h1>
+<h1><%= current_user.username %>'s list of active characters:</h1>
 <% if @characters.empty? %>
 
 <p> You have no Dungeons and Dragons characters. Click <a href="/characters/new">here</a> to make one!</p>

@@ -10,8 +10,8 @@ class PostsController < ApplicationController
     if !logged_in?
     redirect "/login"
     else
-    @user = current_user
-    @characters = @user.characters
+      
+    @characters = current_user.characters
     erb :characterspage
   end
 end
@@ -34,8 +34,7 @@ end
   end
   
   post '/characters' do
-  @user = current_user
-  @character = Character.create(name: params[:name], gender: params[:gender], race: params[:race], archetype: params[:archetype], background: params[:background], user_id: @user.id) unless params[:name].empty?
+  @character = current_user.characters.create(params) unless params[:name].empty?
   redirect to "/characters"
   end
 
